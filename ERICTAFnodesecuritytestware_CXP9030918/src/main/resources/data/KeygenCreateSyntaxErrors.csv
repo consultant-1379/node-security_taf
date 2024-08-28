@@ -1,0 +1,9 @@
+command,purpose
+secadm keygen,no command mandatory parameters
+secadm keygen create, no command mandatory parameters
+secadm keygen create -n node_0001, missing mandatory parameter: algorithm-type-size
+secadm keygen create -t RSA_1024, missing mandatory parameter: nodelist
+secadm keygen create --n node_0001 --algorithm-type-size RSA_1024, invalid argument --n: needed -n 
+secadm keygen create -nodelist node_0001 --algorithm-type-size RSA_1024, invalid argument -nodelist: needed --nodelist
+secadm keygen create -n node_0001 --t RSA_1024, invalid argument --t: needed -t
+secadm keygen create -n node_0001 -algorithm-type-size RSA_1024, invalid argument -algorithm-type-size: needed --algorithm-type-size

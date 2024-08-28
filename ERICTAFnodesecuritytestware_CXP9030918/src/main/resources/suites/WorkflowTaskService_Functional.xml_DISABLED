@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WorkflowTaskService_Functional">
+	<test name="WorkflowTaskService_Functional">
+		<classes>
+			<class name="com.ericsson.nms.security.nscs.taf.test.cases.WorkflowTaskService_FunctionalTest" />   
+				<methods>
+					<!--setUp-->
+                    <include name="setUpSyncNode" />
+					<!--positiveTests-->
+					<include name="testInstallTrustedCertificatesTask" />			
+					<include name="testInitCertEnrollmentTask" />			
+					<!--tearDown-->
+					<include name="tearDownDeleteNodes" />
+					
+					<!--negativeTests-->
+					<include name="testInstallTrustedCertificatesTaskNodeDoesNotExists" />						
+					<include name="testInitCertEnrollmentNodeDoesNotExists" />						
+						
+				</methods>
+		</classes>
+	</test>
+</suite>

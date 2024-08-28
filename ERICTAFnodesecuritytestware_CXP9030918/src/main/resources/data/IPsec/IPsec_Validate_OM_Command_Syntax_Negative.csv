@@ -1,0 +1,23 @@
+COMMAND,EXPECTEDMESSAGE
+secadm,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --continue,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --continue --xmlfile,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --continue --xmlfile file:,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -c,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -c -xf,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -c -xf file:,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -continue -xmlfile file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -continue --xf file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --c -xmlfile file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --c --xf file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --xf file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -xmlfile file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -continue -xmlfile file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -continue --xf file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --c -xmlfile file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --c --xf file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --xf file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -xmlfile file:OMConfigurationOne.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -xmlfile file:OMDisable.xml,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --xf file:OMDisable.xml,Suggested Solution : Please check Online Help for correct syntax

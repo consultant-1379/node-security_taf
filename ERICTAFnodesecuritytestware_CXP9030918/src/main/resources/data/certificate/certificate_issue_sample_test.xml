@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<NodeFdn>%s</NodeFdn>
+		<EntityProfileName>PicoRBSIPSecP EP</EntityProfileName>
+		<SubjectAltName>10.0.0.1</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>SCEP</EnrollmentMode>
+		<KeySize>RSA_1024</KeySize>
+	</Node>
+</Nodes>

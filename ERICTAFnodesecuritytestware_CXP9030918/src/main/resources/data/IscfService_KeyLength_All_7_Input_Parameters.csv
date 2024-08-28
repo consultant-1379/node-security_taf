@@ -1,0 +1,5 @@
+logicalName,nodeFdn,wantedSecLevel,minimumSecLevel,wantedEnrollmentMode,nodeType,mimVersion,expectedKeyLength
+Luca,LTEMARCO,2,2,SCEP,ERBS,E.1.47,0
+Luca,LTEMARCO,2,2,SCEP,ERBS,E.1.48,0
+Luca,LTEMARCO,2,2,SCEP,ERBS,E.1.49,0
+Luca,LTEMARCO,2,2,SCEP,ERBS,E.1.50,1

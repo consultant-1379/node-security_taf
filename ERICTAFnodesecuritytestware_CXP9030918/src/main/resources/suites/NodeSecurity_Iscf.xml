@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NodeSecurity_Iscf - Skyfall">
+    <test name="IscfService_PositiveScenarios">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.IscfServicePositiveTests">
+                <methods>
+                    <include name="iscfServiceOAMPositive"/>
+                    <include name="iscfServiceIPSecPositive"/>
+                    <include name="iscfServiceCOMBOPositive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--<test name="IscfService_NegativeScenarios">
+	    <classes>
+	        <class name="com.ericsson.nms.security.nscs.taf.test.cases.IscfServiceNegativeTests">
+	           <methods>
+	                    <include name="iscfServiceOAMNegative"/>
+	                    <include name="iscfServiceIPSecNegative"/>
+	                    <include name="iscfServiceCOMBONegative"/>
+	                </methods>
+			</class>
+	    </classes>
+	</test>-->
+</suite>

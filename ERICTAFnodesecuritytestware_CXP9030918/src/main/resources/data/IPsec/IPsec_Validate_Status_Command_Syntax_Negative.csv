@@ -1,0 +1,17 @@
+COMMAND,FDN,EXPECTEDMESSAGE
+secadm ipsec --status,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --status --configuration,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --status --configuration --nodefile,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --status --configuration --nodefile file:,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -s,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -s -c,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -s -c -nf,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -s -c -nf file:,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -status -configuration -nodefile file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --s -configuration -nodefile file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -status --c -nodefile file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -status -configuration --nf file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -status -nodefile file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec --s -nodefile file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -status -nodefile file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax
+secadm ipsec -status --nf file:abc.txt,MeContext=LTE07ERBS00002,Suggested Solution : Please check Online Help for correct syntax

@@ -1,0 +1,7 @@
+wantedEnrollmentMode,nodeType,mimVersion,expectedKeyLength,expectedEnrollmentMode,expectedCertificateAuthorityDn
+SCEP,ERBS,E.1.49,0,0,CN=NEIPsecCA
+SCEP,ERBS,E.1.50,1,0,CN=NEIPsecCA
+CMPv2_VC,ERBS,E.1.49,0,1,CN=NEIPsecCA
+CMPv2_VC,ERBS,E.1.50,1,1,CN=NEIPsecCA
+CMPv2_INITIAL,ERBS,E.1.49,0,2,CN=NEIPsecCA
+CMPv2_INITIAL,ERBS,E.1.50,1,2,CN=NEIPsecCA

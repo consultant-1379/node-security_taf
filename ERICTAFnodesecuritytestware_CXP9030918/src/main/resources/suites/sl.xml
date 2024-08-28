@@ -1,0 +1,52 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="nodesecurity_security">
+    <!--<test name="CommandHandlingWhenNoNodesTests">-->
+        <!--<classes>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelErrorScenariosNoNodesTest"> </class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <test name="AddSynchroniseCreateCredentialsOnNodesNeededForTests">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.Create7NodesOneOfEachVersion">  </class>
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateNodesNeededForSecadmTest">  </class>-->
+        </classes>
+    </test>
+    <!--<test name="AlarmNotificationTest">-->
+        <!--<classes>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.NodeSecurityAlarmEventNotificationTest">-->
+                <!--<methods>-->
+                    <!--<include name="verifyNotificationsReceivedInNodeSecurityService"/>-->
+                    <!--<include name="verifyAlarmsReceivedInNodeSecurityService"/>-->
+                    <!--<include name="verifyNonSecurityAlarmsNotReceivedInNodeSecurityService"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="SecurityLevelPositiveScenarios">-->
+        <!--<classes>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelGetPositiveScenariosTest"> </class>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelSetPositiveScenariosTest">-->
+                <!--<methods>-->
+                    <!--<include name="securityLevelSetSl2OneNode"/>-->
+                    <!--<include name="securityLevelSetSl1OneNode"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="SecadmSyntaxErrors">-->
+        <!--<classes>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelSetSyntaxErrorScenariosTest"> </class>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelGetSyntaxErrorScenariosTest">  </class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ErrorScenarios">-->
+        <!--<classes>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelErrorScenariosTest"> </class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="DeleteNodesNeededForTests">-->
+        <!--<classes>-->
+            <!--<class name="com.ericsson.nms.security.nscs.taf.test.cases.DeleteNodesNeededForSecadmTest"> </class>-->
+        <!--</classes>-->
+    <!--</test>-->
+</suite>

@@ -1,0 +1,15 @@
+COMMAND,EXPECTEDMESSAGE
+secadm ipsec --continue --xmlfile file:OMConfigurationOne.xml,IPSec activation/deactivation change initiated
+secadm ipsec --continue -xf file:OMConfigurationOne.xml,IPSec activation/deactivation change initiated
+secadm ipsec -c --xmlfile file:OMConfigurationOne.xml,IPSec activation/deactivation change initiated
+secadm ipsec -c -xf file:OMConfigurationOne.xml,IPSec activation/deactivation change initiated
+secadm ipsec -xf file:OMConfigurationOne.xml,IPSec activation/deactivation change initiated
+secadm ipsec --xmlfile file:OMConfigurationOne.xml,IPSec activation/deactivation change initiated
+secadm ipsec --continue --xmlfile file:OMConfigurationTwo.xml,IPSec activation/deactivation change initiated
+secadm ipsec --continue -xf file:OMConfigurationTwo.xml,IPSec activation/deactivation change initiated
+secadm ipsec -c --xmlfile file:OMConfigurationTwo.xml,IPSec activation/deactivation change initiated
+secadm ipsec -c -xf file:OMConfigurationTwo.xml,IPSec activation/deactivation change initiated
+secadm ipsec -xf file:OMConfigurationTwo.xml,IPSec activation/deactivation change initiated
+secadm ipsec --xmlfile file:OMConfigurationTwo.xml,IPSec activation/deactivation change initiated
+secadm ipsec --xmlfile file:OMDisable.xml,IPSec activation/deactivation change initiated
+secadm ipsec -xf file:OMDisable.xml,IPSec activation/deactivation change initiated

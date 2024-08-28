@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+    <Node>
+        <NodeFdn>LTE07ERBS00001</NodeFdn>
+        <SubAltName>DEMO_SUB_ALT_NAME_004</SubAltName>
+        <DisableOMConfiguration>
+            <removeCert>false</removeCert>
+            <removeTrust>
+                <serialNumber>10001</serialNumber>
+                <issuer>ERICSSON</issuer>
+            </removeTrust>
+            <dnsServer1>192.168.0.5</dnsServer1>
+            <dnsServer2>192.168.1.5</dnsServer2>
+            <ipAddressOaMOuter>192.168.32.7</ipAddressOaMOuter>
+            <defaultRouter0>192.168.20.3</defaultRouter0>
+            <networkPrefixLength>23</networkPrefixLength>
+            <remoteIpAddress>192.168.20.3</remoteIpAddress>
+        </DisableOMConfiguration>
+    </Node>
+</Nodes>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+    <Node>
+        <NodeFdn>LTE07ERBS00006</NodeFdn>
+        <SubAltName>DEMO_SUB_ALT_NAME_005</SubAltName>
+        <InstallTrustCertificates>
+            <removeTrustOnFailure>false</removeTrustOnFailure>
+            <trustedCertificateFilePath>/home/smrs/abc.pem</trustedCertificateFilePath>
+        </InstallTrustCertificates>
+    </Node>
+</Nodes>

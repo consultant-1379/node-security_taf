@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="nodesecurity_delete">
+    <test name="DeleteNodesNeededForTests">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.DeleteNodesNeededForSecadmTest"> </class>
+        </classes>
+    </test>
+</suite>

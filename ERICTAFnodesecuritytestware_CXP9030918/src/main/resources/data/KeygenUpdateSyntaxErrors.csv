@@ -1,0 +1,6 @@
+command,purpose
+secadm keygen update,no command mandatory parameters
+secadm keygen update -nn SGSN_SM_0001 -t RSA_2048,invalid argument -nn
+secadm keygen update -n SGSN_SM_0001 algorithm-type-size RSA_2048,invalid argument algorithm-type-size
+secadm keygen update -nodelist SGSN_SM_0001, invalid argument -nodelist
+secadm keygen update --nodelist SGSN_SM_0001 -algorithm-type-size RSA_1024,invalid argument -algorithm-type-size

@@ -1,0 +1,23 @@
+command,purpose
+secadm securitylevel set,securitylevel set no command mandatory parameter nodelist or nodefile
+secadm securitylevel set -l 1,securitylevel set no command mandatory parameter nodelist or nodefile
+secadm securitylevel set -nodelist somenodename,securitylevel set no command mandatory parameter --level
+secadm securitylevel set --level 1 --xx somenodename,securitylevel set unknown replacement parameter --xx
+secadm securitylevel set --level 1 --xx somenodename --nodefile somenodename , unknown extra parameter --xx
+secadm securitylevel set --nodelist somenodename --nodelist somenodename ,securitylevel set duplicate parameter nodelist long version
+secadm securitylevel set -l 1 --nodelist somenodename -n somenodename,securitylevel set duplicate parameter --nodelist short version
+secadm securitylevel set --level 1 --level 1 --nodelist somenodename ,securitylevel set duplicate parameter --level long version
+secadm securitylevel set -l 1 -l 1 -n somenodename,securitylevel set duplicate parameter --level -l short version
+secadm securitylevel set -l 1,securitylevel set missing nodelist or nodefile parameter
+secadm securitylevel set -l 1 --nodelist,securitylevel set missing value for nodelist
+secadm securitylevel set -l 1 --nodefile,securitylevel set missing value for nodefile
+secadm securitylevel set -l 1 --nodelist somenodename somenodename,securitylevel set  2 values supplied for nodelist
+secadm securitylevel set -l 1 2 --nodelist somenodename,securitylevel set  2 values supplied for --level -l
+"secadm securitylevel set -l 1 -n NetworkElement=somenodename;somenodename;MeContext=somenodename",securitylevel set invalid node separators
+"secadm securitylevel set -l 1 -n NetworkElement=somenodename,somenodename1,MeContext=somenodename2,",securitylevel set extra comma at end
+"secadm securitylevel set -l 1 -n NetworkElement=somenodename,somenodename1,,,,MeContext=somenodename2,",securitylevel set lots of commas between nodes
+secadm securitylevel set --nodelist somenodename --level 1 , securitylevel set Order of parameters
+
+
+
+

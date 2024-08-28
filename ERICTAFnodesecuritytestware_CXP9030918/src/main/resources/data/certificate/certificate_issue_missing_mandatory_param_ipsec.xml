@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<NodeFdn>%s</NodeFdn>
+		<EntityProfileName>PicoRBSIPSecP EP</EntityProfileName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>SCEP</EnrollmentMode>
+	</Node>
+</Nodes>

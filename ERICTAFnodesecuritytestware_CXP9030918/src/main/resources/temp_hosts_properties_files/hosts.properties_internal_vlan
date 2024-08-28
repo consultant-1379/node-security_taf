@@ -1,0 +1,86 @@
+#To switch between the cloud and multinode deployment
+#replace this file with one of the files located in the
+#taf_properties_tmp folder
+
+#This parameter is used by TafHosts class to determine the deployment type
+deployment.type=multinode
+
+######################
+##
+##   SC-1
+##
+#######################
+
+### TOR LMS2 (SC-1) ###
+#host.sc1.ip=10.59.142.48
+
+### TOR LMS1 (SC-1) ###
+host.sc1.ip=10.59.132.219
+
+host.sc1.type=SC1
+host.sc1.port.http=8080
+host.sc1.port.rmi=4447
+host.sc1.port.ssh=22
+host.sc1.user.root.type = root
+host.sc1.user.root.pass=litpc0b6lEr
+
+
+### TOR LMS2 (CMServ-0) ###
+#host.sc1jbi.ip = 10.59.142.58
+
+### TOR LMS1 (CMServ-0) ###
+host.sc1.node.sc1jbi.ip = 192.168.10.21
+
+host.sc1.node.sc1jbi.type = jboss
+host.sc1.node.sc1jbi.port.http = 8080
+host.sc1.node.sc1jbi.port.rmi = 4447
+host.sc1.node.sc1jbi.port.jmx = 9999
+host.sc1.node.sc1jbi.port.ssh=22
+host.sc1.node.sc1jbi.tunnel=1
+### REST Operator ###
+#host.sc1jbi.user.root.type = root
+#host.sc1jbi.user.root.pass=litpc0b6lEr
+### EJB Operator ###
+#host.sc1jbi.user.guest.type=OPER
+#host.sc1jbi.user.guest.pass=guestp
+
+
+
+######################
+##
+##   SC-2
+##
+#######################
+
+
+### TOR LMS2 (SC-2) ###
+#host.sc2.ip=10.59.142.100
+
+### TOR LMS1 (SC-2) ###
+host.sc2.ip=10.59.132.230
+
+host.sc2.type=SC2
+host.sc2.port.http=8080
+host.sc2.port.rmi=4447
+host.sc2.port.ssh=22
+host.sc2.user.root.type = root
+host.sc2.user.root.pass=litpc0b6lEr
+ 
+### TOR LMS2 (CMServ-1) ###
+#host.sc2jbi.ip = 10.59.142.59
+
+### TOR LMS1 (CMServ-1) ###
+host.sc2.node.sc2jbi.ip = 192.168.10.22
+
+host.sc2.node.sc2jbi.type = jboss
+host.sc2.node.sc2jbi.port.http = 8080
+host.sc2.node.sc2jbi.port.rmi = 4447
+host.sc2.node.sc2jbi.port.jmx = 9999
+host.sc2.node.sc2jbi.port.ssh=22
+host.sc2.node.sc2jbi.tunnel=2
+### REST Operator ###
+#host.sc2jbi.user.root.type = root
+#host.sc2jbi.user.root.pass=litpc0b6lEr
+### EJB Operator ###
+#host.sc2jbi.user.guest.type=OPER
+#host.sc2jbi.user.guest.pass=guestp

@@ -1,0 +1,10 @@
+/.settings
+/.project
+/.classpath
+/target
+.pmd
+.idea
+.iml
+/test.log
+/test-output
+/tmp

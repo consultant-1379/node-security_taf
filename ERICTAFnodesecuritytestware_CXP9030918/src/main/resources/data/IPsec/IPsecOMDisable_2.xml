@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+<Node>
+   <NodeFdn>LTE05ERBS00004</NodeFdn>
+   <SubAltName></SubAltName>
+	<DisableOMConfiguration>
+		<removeCert></removeCert>
+		<removeTrust>
+			<serialNumber></serialNumber>
+		    <issuer></issuer>
+		</removeTrust>
+		<dnsServer1></dnsServer1>
+		<dnsServer2></dnsServer2>
+		<ipAddressOaMOuter></ipAddressOaMOuter>
+		<defaultRouter0></defaultRouter0>
+		<networkPrefixLength></networkPrefixLength>
+		<remoteIpAddress></remoteIpAddress>
+ </DisableOMConfiguration>
+</Node>
+<Node>
+    <NodeFdn>LTE05ERBS00005</NodeFdn>
+    <SubAltName></SubAltName>
+    <DisableOMConfiguration>
+        <removeCert></removeCert>
+        <removeTrust>
+            <serialNumber></serialNumber>
+            <issuer></issuer>
+        </removeTrust>
+        <dnsServer1></dnsServer1>
+        <dnsServer2></dnsServer2>
+        <ipAddressOaMOuter></ipAddressOaMOuter>
+        <defaultRouter0></defaultRouter0>
+        <networkPrefixLength></networkPrefixLength>
+        <remoteIpAddress></remoteIpAddress>
+    </DisableOMConfiguration>
+</Node>
+</Nodes>

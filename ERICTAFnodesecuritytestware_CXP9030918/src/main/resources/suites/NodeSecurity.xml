@@ -1,0 +1,124 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NodeSecurity - Skyfall_Blue Sky">
+<!--
+  - From suite "NodeSecurity_CredentialsErbs.xml"
+  -->
+    <test name="AddSynchroniseCreateCredentialsOnNodesNeededForTests">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateNodesNeededForSecadmCredentialsTests"></class>
+        </classes>
+    </test>
+    <test name="RoleBasedAccessControl">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacOperatorScenariosTests">   </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacSecurityAdminScenariosTests">  </class>           
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacFieldTechnicianScenariosTests">  </class>
+        </classes>
+    </test>
+    <test name="ErrorScenarios">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsSyntaxErrorScenariosTests">  </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CredentialsErrorScenariosTests"></class>
+        </classes>
+    </test>
+    <test name="CredentialsPositiveScenarios"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsPositiveScenariosTests"> </class> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsPositiveScenariosTests"> </class> 
+        </classes> 
+    </test> 
+    <test name="DeleteNodesNeededForTests"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.DeleteNodesNeededForSecadmCredentialsTests"> </class> 
+        </classes> 
+    </test> 
+    <test name="PerformanceTests"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CredentialsPerformanceScenariosTests"> </class> 
+        </classes> 
+    </test> 
+
+<!--
+  - From suite "NodeSecurity_CredentialsSgsn.xml"
+  -->
+    <test name="AddSynchroniseCreateCredentialsOnNodesNeededForTestsSgsn">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateNodesSgsnNeededForSecadmCredentialsTests"></class>
+        </classes>
+    </test>
+    <test name="RoleBasedAccessControlSgsn">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacOperatorForSgsnScenariosTests">   </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacSecurityAdminForSgsnScenariosTests">  </class>           
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacFieldTechnicianForSgsnScenariosTests">  </class>
+        </classes>
+    </test>
+    <test name="ErrorScenariosSgsn">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsForSgsnSyntaxErrorScenariosTests">  </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsForSgsnSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CredentialsErrorForSgsnScenariosTests"></class>
+        </classes>
+    </test> 
+    <test name="CredentialsPositiveScenariosSgsn"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsForSgsnPositiveScenariosTests"> </class> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsForSgsnPositiveScenariosTests"> </class> 
+        </classes> 
+    </test>
+    <test name="DeleteNodesNeededForTestsSgsn"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.DeleteNodesSgsnNeededForSecadmCredentialsTests"> </class> 
+        </classes> 
+    </test> 
+    <test name="PerformanceTestsSgsn"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CredentialsPerformanceForSgsnScenariosTests"> </class>
+        </classes> 
+    </test>
+
+<!--
+  - From suite "NodeSecurity_Keygen.xml" - COMMENTED OUT to release TAF version 1.0.112, with Credential tests only (no mediation)
+  -->
+<test name="AddSynchroniseKeygenOnNodesNeededForTests">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.CreateNodesNeededForSecadmKeygenTests"></class>
+        </classes>
+    </test>
+
+    <test name="KeygenErrorScenarios">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.CreateKeygenSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.UpdateKeygenSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenInvalidAlgorithmTypeSizeErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenMODoesNotExistErrorScenariosTests"></class>            
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenSecurityFunctionMODoesNotExistErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenNetworkElementSecurityDoesNotExistErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenUnsupportedNodeTypeErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenKeypairMissingErrorScenariosTests"></class>            
+        </classes>
+    </test>
+    
+    <test name="KeygenPositiveScenarios"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenCreatePositiveScenariosTests"> </class> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenUpdatePositiveScenariosTests"> </class> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenCreatePositiveUnassociatedMeContextScenariosTests"> </class>
+        </classes> 
+    </test>
+    
+    <test name="KeygenPostPositiveErrorScenarios"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenKeypairAlreadyGeneratedErrorScenariosTests"></class>
+            
+        </classes> 
+    </test>
+
+    <test name="KeygenDeleteNodesNeededForTests"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.DeleteNodesNeededForSecadmKeygenTests"> </class> 
+        </classes> 
+    </test>
+
+</suite>

@@ -1,0 +1,20 @@
+[
+    {
+        "hostname": "sc1",
+        "ip": "192.168.0.43",
+        "type": "sc1",
+        "users": [
+            {"username": "root", "password": "litpc0b6lEr", "type": "admin"}
+        ],
+        "ports": {"http": 8080, "ssh": 22}
+    },
+    {
+        "hostname": "sc2",
+        "ip": "192.168.0.44",
+        "type": "sc2",
+        "users": [
+            {"username": "root", "password": "litpc0b6lEr", "type": "admin"}
+        ],
+        "ports": {"http": 8080, "ssh": 22}
+    }
+]

@@ -1,0 +1,62 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="nodesecurty_ipsec_kgb_cdb">
+	<test name="ipsecCommandAuthRole">
+		<classes>
+			<class
+				name="com.ericsson.nms.security.nscs.taf.test.cases.ipsec.IPsecCommandRoles">
+				<methods>
+					<include name="checkOperatorRole" />
+					<include name="checkFieldTechnicianRole" />
+					<include name="checkSecurityAdminRole" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ipsecCommandSyntax">
+		<classes>
+			<class
+				name="com.ericsson.nms.security.nscs.taf.test.cases.ipsec.IPsecCommandSyntaxValidationPositiveTest">
+				<methods>
+					<include name="checkIPsecOMCommandSyntaxPositive" />
+					<include name="checkIPsecStatusCommandSyntaxPositive" />
+				</methods>
+			</class>
+
+			<class
+				name="com.ericsson.nms.security.nscs.taf.test.cases.ipsec.IPsecCommandSyntaxValidationNegativeTest">
+				<methods>
+					<include name="checkIPsecOMCommandSyntaxNegative" />
+					<include name="checkIPsecStatusCommandSyntaxNegative" />
+					<include name="checkIPsecStatusCommandDupNodeNegative" />
+					<include name="checkIPsecStatusCommandInvalidNodeNegative" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- <test name="ipsecStatusCommand">
+		<classes>
+			<class
+				name="com.ericsson.nms.security.nscs.taf.test.cases.ipsec.IPsecStatusCommandScenariosTest">
+				<methods>
+					<include name="checkIPsecStatus" />
+					<include name="checkIPsecStatusWithConfig" />
+					<include name="deleteNodes" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ipsecOMCommand">
+		<classes>
+			<class
+				name="com.ericsson.nms.security.nscs.taf.test.cases.ipsec.IPsecOMEnableCommandScenariosTest">
+				<methods>
+					<include name="checkIPsecOMEnableConfig1Command" />
+					<include name="checkIPsecOMEnableConfig2Command" />
+					<include name="checkIPsecOMEnableConfig1NodeCertCommand" />
+					<include name="checkIPsecOMEnableConfig2NodeCertCommand" />
+					<include name="deleteNodes" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+</suite>

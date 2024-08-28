@@ -1,0 +1,6 @@
+nodeName,ipAddress,isNodeSynchonized,IPsecMOexist,xmlFileName,testCaseName
+LTE05ERBS00003,"192.168.101.3",true,true,IPsecOMDisable_1.xml,checkIPsecOMDisableCommandScenariosTest
+LTE05ERBS00004;LTE05ERBS00005,"192.168.101.4";"192.168.101.5",true,true,IPsecOMDisable_2.xml,checkIPsecOMDisableCommandScenariosTest
+LTE05ERBS00006,"192.168.101.6",true,false,IPsecOMDisable_3.xml,checkIPsecOMDisableRegardingNodeWithoutIPsecMO
+LTE05ERBS00007,"192.168.101.7",false,true,IPsecOMDisable_4.xml,checkIPsecOMDisableRegardingUnsynchronizedNode
+LTE05ERBS00008,"192.168.101.8",true,true,IPsecOMDisable_5.xml,checkIPsecOMDisableRegardingSameNodeTwice

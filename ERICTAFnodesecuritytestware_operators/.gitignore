@@ -1,0 +1,13 @@
+/.settings
+/.project
+/.classpath
+/target
+.pmd
+.idea
+.iml
+/test.log
+/test-output
+/tmp
+/curl.exe
+/libeay32.dll
+/libssl32.dll

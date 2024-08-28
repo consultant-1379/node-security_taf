@@ -1,0 +1,3 @@
+logicalName,nodeFdn,ipsecUserLabel,subjectAltName,subjectAltNameType,ipsecAreas
+IPSecLgn01,MarcoLTE,MarcoLabel,MarcoAltName,IPV4,OM
+IPSecLgn01,MarcoLTE,MarcoLabel,MarcoAltName,IPV4,TRANSPORT

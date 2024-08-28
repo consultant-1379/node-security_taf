@@ -1,0 +1,22 @@
+command,purpose
+secadm securitylevel,securitylevel get no command mandatory parameters
+secadm securitylevel get,securitylevel get no command mandatory parameters
+secadm securitylevel get --xx somenodename,securitylevel get unknown replacement parameter --xx
+secadm securitylevel get --xx somenodename --nodefile somenodename ,securitylevel get unknown extra parameter --xx
+secadm securitylevel get --nodelist somenodename --nodelist somenodename ,securitylevel get duplicate parameter long version
+secadm securitylevel get --nodelist somenodename -n somenodename,securitylevel get duplicate parameter short version
+secadm securitylevel get,securitylevel get missing nodelist or nodefile parameter
+secadm securitylevel get --nodelist,securitylevel getmissing value for nodelist
+secadm securitylevel get --nodefile,securitylevel get missing value for nodefile
+secadm securitylevel get --nodelist somenodename somenodename, securitylevel get 2 values supplied for nodelist
+"secadm securitylevel get -n NetworkElement=somenodename;somenodename;MeContext=somenodename",securitylevel get invalid node separators
+"secadm securitylevel get -n NetworkElement=somenodename,somenodename1,MeContext=somenodename2,",securitylevel get extra comma at end
+"secadm securitylevel get -n NetworkElement=somenodename,somenodename1,,,,MeContext=somenodename2,",securitylevel get lots of commas between nodes
+secadm securitylevel get --level  --nodelist somenodename, securitylevel get No value supplied for level
+secadm securitylevel get --level 4 --nodelist somenodename,securitylevel get Invalid value level > 3
+secadm securitylevel get --level 1 -l 1 --nodelist somenodename, securitylevel get Duplicate parameter --level -l
+secadm securitylevel get --nodelist somenodename --level 1 , securitylevel get Order of parameters
+secadm securitylevel get --level 3 --nodelist somenodename, securitylevel 3 used should give syntax error : This was originally supported
+
+
+

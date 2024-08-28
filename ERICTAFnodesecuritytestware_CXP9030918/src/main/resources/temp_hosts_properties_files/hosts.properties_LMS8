@@ -1,0 +1,81 @@
+#To switch between the cloud and multinode deployment
+#replace this file with one of the files located in the
+#taf_properties_tmp folder
+
+#This parameter is used by TafHosts class to determine the deployment type
+deployment.type=multinode
+
+#######     Apache  ######
+
+host.httpd_su0.ip=10.32.226.97
+host.httpd_su0.type=http
+host.httpd_su0.port.http=80
+host.httpd_su0.port.https=443
+host.httpd_su0.port.rmi=4447
+host.httpd_su0.user.root.type=admin
+host.httpd_su0.user.root.pass=TestPassw0rd
+
+
+
+########    SC1     #######
+host.sc1.ip=10.32.226.96
+host.sc1.type=SC1
+host.sc1.port.http=8080
+host.sc1.port.rmi=4447
+host.sc1.port.ssh=22
+host.sc1.user.root.type = root
+host.sc1.user.root.pass=litpc0b6lEr
+
+
+#######     CMServ-0 #######
+host.cmserv_su0.ip = 192.168.100.21
+host.cmserv_su0.type = jboss
+host.cmserv_su0.port.http = 8080
+host.cmserv_su0.port.rmi = 4447
+host.cmserv_su0.port.jmx = 9999
+host.cmserv_su0.port.ssh=22
+host.cmserv_su0.user.guest.pass=guestp
+host.cmserv_su0.user.guest.type=OPER
+
+
+#######     SecServ-0 #######
+host.secserv_su0.ip = 192.168.100.29
+host.secserv_su0.type = jboss
+host.secserv_su0.port.http = 8080
+host.secserv_su0.port.rmi = 4447
+host.secserv_su0.port.jmx = 9999
+host.secserv_su0.port.ssh=22
+host.secserv_su0.user.guest.pass=guestp
+host.secserv_su0.user.guest.type=OPER
+
+
+#######     SC-2     #######
+host.sc2.ip=10.32.227.195
+host.sc2.type=SC2
+host.sc2.port.http=8080
+host.sc2.port.rmi=4447
+host.sc2.port.ssh=22
+host.sc2.user.root.type = root
+host.sc2.user.root.pass=litpc0b6lEr
+
+
+########    CMServ-1 #######
+host.cmserv_su1.ip = 192.168.100.22
+host.cmserv_su1.type = jboss
+host.cmserv_su1.port.http = 8080
+host.cmserv_su1.port.rmi = 4447
+host.cmserv_su1.port.jmx = 9999
+host.cmserv_su1.port.ssh=22
+host.cmserv_su1.user.guest.pass=guestp
+host.cmserv_su1.user.guest.type=OPER
+
+
+#######     SecServ-1 #######
+host.secserv_su1.ip = 192.168.100.30
+host.secserv_su1.type = jboss
+host.secserv_su1.port.http = 8080
+host.secserv_su1.port.rmi = 4447
+host.secserv_su1.port.jmx = 9999
+host.secserv_su1.port.ssh=22
+host.secserv_su1.user.guest.pass=guestp
+host.secserv_su1.user.guest.type=OPER

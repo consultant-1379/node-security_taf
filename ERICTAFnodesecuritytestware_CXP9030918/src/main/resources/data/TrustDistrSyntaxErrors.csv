@@ -1,0 +1,12 @@
+command,purpose
+secadm trust distribute,no command mandatory parameters
+secadm trust distribute --certtype IPSEC, missing mandatory parameter --nodefile or --nodelist
+secadm trust distribute --nodefile file:abc.xml, missing mandatory parameter --certtype
+"secadm trust distribute --nodelist node1,node2,NetworkElement=node5,MeContext=node4", missing mandatory parameter --certtype
+secadm trust distribute -certtype IPSEC --nodefile file:abc.txt, command syntax error -certtype
+"secadm trust distribute -certtype IPSEC --nodelist node1,node2,NetworkElement=node5,MeContext=node4", command syntax error -certtype
+secadm trust distribute --certtype IPSEC -nodefile file:abc.txt, command syntax error -nodefile 
+"secadm trust distribute --certtype IPSEC -nodelist node1,node2", command syntax error -nodelist
+secadm trust distribute -ctt IPSEC --nodefile file:abc.txt, command syntax error -ctt 
+secadm trust distribute -ct IPSEC -nff file:abc.txt, command syntax error -nff 
+secadm trust distribute -ct IPSEC --nodefile nodefile:abc.txt, command syntax error --nodefile nodefile:

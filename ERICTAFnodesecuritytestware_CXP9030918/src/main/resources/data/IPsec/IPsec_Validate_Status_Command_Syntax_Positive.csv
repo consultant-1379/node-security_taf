@@ -1,0 +1,9 @@
+COMMAND,FDN,EXPECTEDMESSAGE
+secadm ipsec --status --configuration --nodefile file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec -s --configuration --nodefile file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec --status -cf --nodefile file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec --status --configuration -nf file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec --status --nodefile file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec -s --nodefile file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec --status --nodefile file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully
+secadm ipsec --status -nf file:abc.txt,MeContext=LTE07ERBS00002,Command Executed Successfully

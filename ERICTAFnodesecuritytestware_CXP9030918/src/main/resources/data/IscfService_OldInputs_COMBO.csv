@@ -1,0 +1,3 @@
+logicalName,nodeFdn,ipsecUserLabel,wantedSecLevel,minimumSecLevel,subjectAltName,subjectAltNameType,ipsecAreas
+COMBOLgn01,StefanoLTE,StefanoLabel,2,2,StefanoAltName,IPV4,OM
+COMBOLgn01,StefanoLTE,StefanoLabel,2,2,StefanoAltName,IPV4,TRANSPORT

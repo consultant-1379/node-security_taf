@@ -1,0 +1,82 @@
+#To switch between the cloud and multinode deployment 
+#replace this file whith one of the files located in the 
+#taf_properties_tmp folder
+
+#This parameter is used by TafHosts class to determine the deployment type
+deployment.type=cloud
+
+#Gateway
+host.gateway.ip = 10.59.128.104
+host.gateway.user.root.pass = shroot
+host.gateway.user.root.type = ADMIN
+host.gateway.port.ssh=22
+
+#SC1 and JBOSS instances -------------------------------------------
+
+#tunnelling to    sc1             which is behind the gateway
+host.gateway.node.sc1.tunnel = 1
+host.gateway.node.sc1.type = SC1
+host.gateway.node.sc1.ip = 192.168.0.43
+host.gateway.node.sc1.port.ssh=22
+host.gateway.node.sc1.port.http = 8080
+host.gateway.node.sc1.port.jmx = 9999
+host.gateway.node.sc1.port.rmi=4447
+host.gateway.node.sc1.user.root.pass=litpc0b6lEr
+host.gateway.node.sc1.user.root.type=ADMIN
+
+#tunnelling to    cmserv_su_0     which is behind the gateway
+host.gateway.node.cmserv_su_0.tunnel = 2
+host.gateway.node.cmserv_su_0.type = jboss
+host.gateway.node.cmserv_su_0.ip = 192.168.0.129
+host.gateway.node.cmserv_su_0.port.ssh=22
+host.gateway.node.cmserv_su_0.port.http = 8080
+host.gateway.node.cmserv_su_0.port.rmi = 4447
+host.gateway.node.cmserv_su_0.port.jmx = 9999
+host.gateway.node.cmserv_su_0.user.guest.pass=guestp
+host.gateway.node.cmserv_su_0.user.guest.type=OPER 
+
+#tunnelling to    secserv_su_0     which is behind the gateway
+host.gateway.node.secserv_su_0.tunnel = 3
+host.gateway.node.secserv_su_0.type = jboss
+host.gateway.node.secserv_su_0.ip = 192.168.0.137
+host.gateway.node.secserv_su_0.port.ssh=22
+host.gateway.node.secserv_su_0.port.http = 8080
+host.gateway.node.secserv_su_0.port.rmi = 4447
+host.gateway.node.secserv_su_0.port.jmx = 9999
+host.gateway.node.secserv_su_0.user.guest.pass=guestp
+host.gateway.node.secserv_su_0.user.guest.type=OPER 
+
+#SC2 and JBOSS instances -------------------------------------------
+
+#tunnelling to    sc2             which is behind the gateway
+host.gateway.node.sc2.tunnel = 4
+host.gateway.node.sc2.type = SC2
+host.gateway.node.sc2.ip = 192.168.0.44
+host.gateway.node.sc2.port.ssh=22
+host.gateway.node.sc2.port.http = 8080
+host.gateway.node.sc2.port.jmx = 9999
+host.gateway.node.sc2.port.rmi=4447
+host.gateway.node.sc2.user.root.pass=litpc0b6lEr
+host.gateway.node.sc2.user.root.type=ADMIN
+
+#tunnelling to    cmserv_su_1     which is behind the gateway
+host.gateway.node.cmserv_su_1.tunnel = 5
+host.gateway.node.cmserv_su_1.type = jboss
+host.gateway.node.cmserv_su_1.ip = 192.168.0.130
+host.gateway.node.cmserv_su_1.port.ssh=22
+host.gateway.node.cmserv_su_1.port.http = 8080
+host.gateway.node.cmserv_su_1.port.rmi = 4447
+host.gateway.node.cmserv_su_1.port.jmx = 9999
+host.gateway.node.cmserv_su_1.user.guest.pass=guestp
+host.gateway.node.cmserv_su_1.user.guest.type=OPER 
+
+#tunnelling to    secserv_su_1     which is behind the gateway
+host.gateway.node.secserv_su_1.tunnel = 6
+host.gateway.node.secserv_su_1.type = jboss
+host.gateway.node.secserv_su_1.ip = 192.168.0.138
+host.gateway.node.secserv_su_1.port.ssh=22
+host.gateway.node.secserv_su_1.port.http = 8080
+host.gateway.node.secserv_su_1.port.rmi = 4447
+host.gateway.node.secserv_su_1.port.jmx = 9999
+host.gateway.node.secserv_su_1.user.guest.pass=guestp
+host.gateway.node.secserv_su_1.user.guest.type=OPER 

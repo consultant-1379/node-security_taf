@@ -1,0 +1,6 @@
+command,purpose
+secadm securitylevel set -l 3 -n somenodename,  securitylevel 3 used should give syntax error : This was originally supported
+secadm laad update -n somenodename,  laad specified should give syntax error : This was originally supported
+
+
+

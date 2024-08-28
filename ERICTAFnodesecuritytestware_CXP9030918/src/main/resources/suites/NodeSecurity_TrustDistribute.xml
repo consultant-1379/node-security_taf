@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NodeSecurity_TrustDistribute - Skyfall">
+    <test name="AddSynchroniseCertificateOnNodesNeededForTests">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.CreateNodesNeededForSecadmTrustDistrTests"></class>
+        </classes>
+    </test>
+    
+    <test name="ErrorScenarios">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributeSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributeInvalidArgumentErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributeNodeNotExistErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributeSecurityFunctionUnassociatedErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributeNodeNotCertifiableErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributeNodeNotSynchronizedErrorScenariosTests"></class>
+        </classes>
+    </test>
+   
+    <test name="TrustDistrPositiveScenarios"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.TrustDistributePositiveScenariosTests"> </class>
+        </classes>
+    </test>
+    
+    <test name="DeleteNodesNeededForTests"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.trustdistr.DeleteNodesNeededForSecadmTrustDistrTests"></class> 
+        </classes> 
+    </test>
+    
+<!--     <test name="SynchronizeNodeNetSimForTests">  -->
+<!--         <classes>  -->
+<!--             <class name="com.ericsson.nms.security.nscs.taf.test.cases.certificate.CertificateIssuePositiveNetSimScenariosTests"></class>  -->
+<!--         </classes>  -->
+<!--     </test> -->
+    
+    <!-- Commented out to enter CDB flow -->
+<!--<test name="PerformaceTests"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CredentialsPerformanceScenariosTests"> </class> 
+        </classes> 
+    </test>-->
+</suite>

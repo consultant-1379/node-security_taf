@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NodeSecurity_IscfLegacy - Skyfall">
+    <test name="IscfService_Functional_Legacy">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.IscfServiceTests">
+                <methods>
+                    <include name="iscfServiceTestLegacy"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

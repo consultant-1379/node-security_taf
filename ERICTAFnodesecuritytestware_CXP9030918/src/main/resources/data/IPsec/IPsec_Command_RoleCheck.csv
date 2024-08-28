@@ -1,0 +1,4 @@
+COMMAND,FDN
+secadm ipsec --status --nodefile file:abc.txt,MeContext=LTE07ERBS00002
+secadm ipsec --continue --xmlfile file:OMConfigurationOne.xml,MeContext=LTE07ERBS00002
+secadm ipsec --continue --xmlfile file:OMDisable.xml,MeContext=LTE07ERBS00002

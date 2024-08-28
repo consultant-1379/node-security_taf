@@ -1,0 +1,43 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NodeSecurity_Keygen - Skyfall">
+    <test name="AddSynchroniseKeygenOnNodesNeededForTests">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.CreateNodesNeededForSecadmKeygenTests"></class>
+        </classes>
+    </test>
+
+    <test name="KeygenErrorScenarios">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.CreateKeygenSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.UpdateKeygenSyntaxErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenInvalidAlgorithmTypeSizeErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenMODoesNotExistErrorScenariosTests"></class>            
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenSecurityFunctionMODoesNotExistErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenNetworkElementSecurityDoesNotExistErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenUnsupportedNodeTypeErrorScenariosTests"></class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenKeypairMissingErrorScenariosTests"></class>            
+        </classes>
+    </test>
+    
+    <test name="KeygenPositiveScenarios"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenCreatePositiveScenariosTests"> </class> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenUpdatePositiveScenariosTests"> </class> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenCreatePositiveUnassociatedMeContextScenariosTests"> </class>
+        </classes> 
+    </test>
+    
+    <test name="KeygenPostPositiveErrorScenarios"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.KeygenKeypairAlreadyGeneratedErrorScenariosTests"></class>
+            
+        </classes> 
+    </test>
+        
+    <test name="KeygenDeleteNodesNeededForTests"> 
+        <classes> 
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.keygen.DeleteNodesNeededForSecadmKeygenTests"> </class> 
+        </classes> 
+    </test>
+    
+</suite>

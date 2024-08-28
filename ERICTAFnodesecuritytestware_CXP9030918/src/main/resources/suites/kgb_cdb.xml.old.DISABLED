@@ -1,0 +1,191 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="nodesecurty_kgb_cdb">
+    <test name="SecadmRBAC">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacOperatorScenariosTest">
+                <methods>
+                    <include name="verifyCannotUseSecadmWhenOperatorUserRole" />
+                </methods>
+            </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacSecurityAdminScenariosTest">
+                <methods>
+                    <include name="verifyCannotUseSecadmWhenSecurityAdminUserRole" />
+                </methods>
+            </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecadmRbacFieldTechnicianScenariosTest">
+                <methods>
+                    <include name="verifyCannotUseSecadmWhenFieldTechnicianUserRole" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecadmCredentialsCreateSyntaxNegative">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsSyntaxErrorScenariosTest">
+                <methods>
+                    <include name="createCredentialsSyntaxError" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--Some of these will fail until bug is fixed on syntax errors-->
+    <test name="SecadmCredentialsUpdateSyntaxNegative">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsSyntaxErrorScenariosTest">
+                <methods>
+                    <include name="updateCredentialsSyntaxError" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecadmCredentialsCreatePerformance">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsPerformanceScenariosTest">
+                <methods>
+                    <include name="credentialsCreateLargeNumberOfNodes" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecadmCredentialsCreatePositive">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsPositiveScenariosTest">
+                <methods>
+                    <include name="credentialsCreateOneNode" />
+                    <include name="credentialsCreateOneNodeUsingMeContext" />
+                    <include name="credentialsCreateOneNodeUsingNetworkElement" />
+                    <include name="credentialsCreateOneNodeWithShortVersionArgumentNames" />
+                    <include name="credentialsCreateMultipleNodeSpecifyNodeName" />
+                    <include name="credentialsCreateMultipleNodesSpecifyMeContextAndNetworkElement" />
+                    <include name="credentialsCreateUsingFileSpecifyNodeName" />
+                    <include name="credentialsCreateUsingFileSpecifyMeContextAndNetworkElement" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecadmCredentialsCreateNegative">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.CreateCredentialsErrorScenariosTest">
+                <methods>
+                    <include name="credentialsCreateErrorResponsesWhenMeContextDoesNotExistSpecifyMeContext" />
+                    <include name="credentialsCreateErrorResponsesWhenNetworkElementDoesNotExistAndSpecifyMeContext" />
+                    <include name="credentialsCreateErrorResponsesWhenNetworkElementDoesNotExistAndSpecifyNetworkElement" />
+                    <include name="credentialsCreateErrorResponsesWhenMeContextDoesNotExistAndNEDoesAndSpecifyMeContext" />
+                    <include name="credentialsCreateErrorResponsesWhenMeContextDoesNotExistAndNEDoesAndSpecifyNetworkElement" />
+                    <include name="credentialsCreateErrorResponsesWhenSecurityFunctionDoesNotExistSpecifyMeContext" />
+                    <include name="credentialsCreateErrorResponsesWhenSecurityFunctionDoesNotExistSpecifyNetworkElement" />
+                    <include name="credentialsCreateErrorResponsesWhenCredentialsAlreadyExist" />
+                    <include name="credentialsCreateUsingEmptyFile" />
+                    <include name="credentialsCreateFileWithNodesWithInvalidDataDelimitersComma" />
+                    <include name="credentialsCreateMultipleErrorsOnMultipleNodes" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpdateCredentialsPositiveScenarios">
+		<classes>
+           <class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsPositiveScenariosTest">
+                <methods>
+					<include name="updateCredOneNode" />
+					<include name="updateCredListOfNodes" />
+					<include name="updateCredOneNodeNetworkElement" />
+					<include name="updateCredOneNodeMeContext" />
+					<include name="updateCredentialsOneParam" />
+					<include name="updateCredentialsMoreParams" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="UpdateCredentialsNegativeScenarios">
+		<classes>
+			<class name="com.ericsson.nms.security.nscs.taf.test.cases.cred.UpdateCredentialsNegativeScenariosTest">
+				<methods>
+					<include name="updateCredentialsMONotExists" />
+					<include name="updateCredentialsListOfNodesOneNodeMONotExists" />
+					<include name="updateCredentialsOneNodeDoesNotExists" />
+					<include name="credentialsUpdateErrorResponsesWhenMeContextDoesNotExistAndNEDoesAndSpecifyMeContext" />
+					<include name="credentialsUpdateErrorResponsesWhenMeContextDoesNotExistAndNEDoesAndSpecifyNetworkElement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="NetworkElementSecurityMO">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.NetworkElementSecurityModelPositiveScenariosTest" >
+                <methods>
+                    <include name="createNetworkElementSecurity"/>
+                    <include name="updateNetworkElementSecurity"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecadmSecurityLevelPositive">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelPositiveScenariosTest">
+                <methods>
+                    <include name="deleteNodesUsedInTests"/>
+                    <include name="createNodesAndSynchronizeAndCreateCredentialsForTests"/>
+                    <include name="securityLevelGetResponsesOneNode"/>
+                    <include name="securityLevelGetResponsesOneNodeUsingMeContext"/>
+                    <include name="securityLevelGetResponsesOneNodeUsingShortArgumentNames"/>
+                    <include name="securityLevelGetResponsesMultipleNode"/>
+                    <include name="securityLevelSetSl2OneNode"/>
+                    <include name="securityLevelSetSl2OneNodeUsingShortArgumentNames"/>
+                    <include name="securityLevelGetAllUsingStar"/>
+                    <include name="securityLevelGetAllUsingAll"/>
+                    <include name="securityLevelGetAllUsingAllShortVersion"/>
+                    <include name="securityLevelGetUsingFileOfNodes"/>
+                    <include name="securityLevelSetUsingFileOfNodesShortArgumentNames"/>
+                    <include name="securityLevelSetSl2MultipleNodes"/>
+                    <include name="securityLevelGetMultipleNodeSpecifySecurityLevelSL1"/>
+                    <include name="securityLevelGetMultipleNodeSpecifySecurityLevelSL2"/>
+                    <include name="securityLevelGetAllNodeSpecifySecurityLevelSL1AndSL2"/>
+                    <!--TODO current Still to be written-->
+                    <!--<include name="securityLevelSetSl2MultipleNodesDifferentSeparators"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecadmSecurityLevelNegative">
+        <classes>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelGetSyntaxErrorScenariosTest">
+                <methods>
+                    <include name="securityLevelGetSyntaxError"/>
+                </methods>
+            </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelSetSyntaxErrorScenariosTest">
+                <methods>
+                    <include name="securityLevelSetSyntaxError"/>
+                </methods>
+            </class>
+            <class name="com.ericsson.nms.security.nscs.taf.test.cases.SecurityLevelErrorScenariosTest">
+                <methods>
+                    <include name="securityLevelGetUsingEmptyFile"/>
+                    <include name="securityLevelGetFileWithNodesWithInvalidDataDelimitersComma"/>
+                    <include name="securityLevelErrorWhenNodeDoesNotExist"/>
+                    <include name="securityLevelSetErrorWhenNodeHasNoCredentials"/>
+                    <include name="securityLevelSetErrorWhenSpecifyDuplicateNode"/>
+                    <include name="securityLevelSetErrorWhenSpecifyDuplicateNodeSameMeContextAndNetworkElement"/>
+                    <include name="securityLevelSetErrorWhenExceedingMaxSupportedNodes"/>
+                    <!--TODO Not Working Bugs written -->
+                    <include name="securityLevelGetErrorWhenNodeIsNotSynched"/>
+                    <include name="securityLevelSetErrorWhenNodeIsNotSynched"/>
+                    <!--TODO Checks not implemented fully in nodesecuriy yet so failing tests    -->
+                    <include name="securityLevelSetErrorWhenNodeAlreadyAtRequestedSecurityLevel"/>
+                    <include name="securityLevelSetErrorWhenNodeAlreadyInWorkflow"/>
+                    <include name="securityLevelErrorWhenMultipleNodesWithMultipleErrors"/>
+                    <!--TODO Next fails as wrong error message in code currently-->
+                    <!--<include name="securityLevelgetListOfFileOfNodesWithInvalidDataDelimitersComma"/>-->
+                    <!--todo  error handling situation empty file, correct error message received-->
+                    <!--todo  error handling situation file does not exist, correct error message received-->
+                    <!--todo  error handling situation when multiple nodes specified in File and problems with a number, 1 does not exist, 1 already has credentials -->
+                    <include name="cleanUpNodeIfNeeded"/>
+                    <!--<include name="testThatWillFail"/>-->
+                    <include name="deleteNodesUsedInTests"/>
+                    <include name="securityLevelErrorGetAllWhenNoNodesExist"/>
+                    <include name="securityLevelErrorGetAllWhenNoNodesExistAndLevelSpecified"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

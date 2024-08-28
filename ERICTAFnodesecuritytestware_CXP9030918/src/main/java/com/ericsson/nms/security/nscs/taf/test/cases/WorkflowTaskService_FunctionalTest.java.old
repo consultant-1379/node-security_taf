@@ -1,0 +1,269 @@
+/*------------------------------------------------------------------------------
+ *******************************************************************************
+ * COPYRIGHT Ericsson 2012
+ *
+ * The copyright to the computer program(s) herein is the property of
+ * Ericsson Inc. The programs may be used and/or copied only with written
+ * permission from Ericsson Inc. or in accordance with the terms and
+ * conditions stipulated in the agreement/contract under which the
+ * program(s) have been supplied.
+ *******************************************************************************
+ *----------------------------------------------------------------------------*/
+
+package com.ericsson.nms.security.nscs.taf.test.cases;
+
+import java.util.*;
+
+import javax.inject.Inject;
+
+import com.ericsson.cifwk.taf.data.User;
+import com.ericsson.cifwk.taf.data.UserType;
+import com.ericsson.cifwk.taf.tools.http.HttpTool;
+import com.ericsson.nms.launcher.LauncherOperator;
+import com.ericsson.nms.security.ENMUser;
+import com.ericsson.nms.security.OpenIDMOperatorImpl;
+import com.ericsson.nms.security.nscs.taf.test.getters.NscsServiceGetter;
+import org.apache.log4j.Logger;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.ericsson.cifwk.taf.TestCase;
+import com.ericsson.cifwk.taf.TorTestCaseHelper;
+import com.ericsson.cifwk.taf.annotations.*;
+import com.ericsson.cifwk.taf.guice.OperatorRegistry;
+import com.ericsson.nms.security.nscs.taf.test.operators.*;
+import com.ericsson.oss.services.nscs.workflow.tasks.api.exception.WorkflowTaskException;
+import com.ericsson.oss.services.nscs.workflow.tasks.api.request.cpp.moaction.InitCertEnrollmentTask;
+import com.ericsson.oss.services.nscs.workflow.tasks.api.request.cpp.moaction.InstallTrustedCertificatesTask;
+import com.ericsson.oss.services.nscs.workflow.tasks.api.request.cpp.model.TrustedCertCategory;
+import com.ericsson.oss.services.scriptengine.spi.dtos.Command;
+import org.testng.Assert;
+
+/*
+
+ * Functional tests of node-security WorkflowTaskOperator interface. This
+ * interface is used from the security-workflows.
+ * 
+ * The aim of these tests is to make sure that all tasks are working as an
+ * atomic element.
+ * 
+ * At this point the MO actions are not mediated: TODO update the tests with
+ * asserts of receiving the messages about MO action is executed as soon as its
+ * supported.
+ * 
+ * @author egbobcs
+*/
+
+
+
+public class WorkflowTaskService_FunctionalTest extends TorTestCaseHelper
+		implements TestCase {
+
+    private static Logger logger = Logger
+            .getLogger(WorkflowTaskService_FunctionalTest.class);
+
+	@Inject
+	private OperatorRegistry<WorkflowTaskOperator> wfProvider;
+
+	@Inject
+	private OperatorRegistry<SyncNodeOperator> syncProvider;
+
+	@Inject
+	private OperatorRegistry<NscsServiceOperator> nscsServiceProvider;
+
+	Set<String> syncedNodes = Collections
+			.synchronizedSet(new HashSet<String>());
+
+    private final ENMUser oasisUserToCreate = new ENMUser();
+
+    private HttpTool httpTool;
+
+    @Inject
+    private LauncherOperator launcherOperator;
+
+    @Inject
+    OpenIDMOperatorImpl openIDMOperator;
+
+    @BeforeClass
+    public void setUp() {
+
+        try {
+            oasisUserToCreate.setUsername(NscsServiceGetter.OASIS_USER_NAME);
+            oasisUserToCreate.setFirstName(NscsServiceGetter.OASIS_FIRST_NAME);
+            oasisUserToCreate.setLastName(NscsServiceGetter.OASIS_SECOND_NAME);
+            oasisUserToCreate.setEmail(NscsServiceGetter.OASIS_EMAIL);
+            oasisUserToCreate.setPassword(NscsServiceGetter.OASIS_PASSWORD);
+            oasisUserToCreate.setEnabled(true);
+
+            openIDMOperator.connect(NscsServiceGetter.ENM_ADMIN_USER_NAME, NscsServiceGetter.ENM_ADMIN_PASSWORD);
+            openIDMOperator.createUser(oasisUserToCreate);
+            openIDMOperator.assignUsersToRole("ADMINISTRATOR", oasisUserToCreate.getUsername());
+            openIDMOperator.assignUsersToRole("OPERATOR", oasisUserToCreate.getUsername());
+            openIDMOperator.assignUsersToRole("SECURITY_ADMIN", oasisUserToCreate.getUsername());
+
+            httpTool = launcherOperator.login(NscsServiceGetter.OASISUSER01);
+
+        } catch (final Exception e) {
+            logger.error(e.getMessage());
+            logger.debug("Setup Error",e);
+        }
+    }
+
+    @AfterClass
+    public void tearDown() {
+
+        try {
+            if (launcherOperator.checkIfLoggedIn(httpTool)) {
+                httpTool = launcherOperator.logout();
+            }
+
+            openIDMOperator.deleteUser(oasisUserToCreate.getUsername());
+        } catch (final Exception e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+/*
+	 * Setup the data: Node needs to be added and synced.
+	 */
+
+	@Context(context = { Context.REST })
+	@DataDriven(name = "NodeList")
+	@Test(groups = { "Acceptance" })
+	public void setUpSyncNode(@Input("nodeName") final String nodeName,
+			@Input("ipAddress") final String ipAddress) {
+
+        if (!launcherOperator.checkIfLoggedIn(httpTool)) {
+            Assert.fail("ERROR - Not logged in");
+        }
+
+		System.out.println("Aboud to sync node: " + nodeName);
+		final boolean syncResult = getSyncOperator().syncNode(nodeName,
+				ipAddress);
+		org.junit.Assert.assertEquals("Sync failed for node:" + nodeName, true,
+				syncResult);
+		syncedNodes.add(nodeName);
+		System.out.println("Node synced: " + nodeName);
+	}
+
+	@Context(context = { Context.API })
+	@DataDriven(name = "NodeList")
+	@Test(groups = { "Acceptance" })
+	public void testInstallTrustedCertificatesTask(
+			@Input("nodeName") final String nodeName,
+			@Input("ipAddress") final String ipAddress) {
+
+        if (!launcherOperator.checkIfLoggedIn(httpTool)) {
+            org.testng.Assert.fail("ERROR - Not logged in");
+        }
+
+		System.out.println("TEST InstallTrustedCertificatesTask: " + nodeName);
+		// processTask will throw exception if error occurs on invocation
+		getWFTOperator().processTask(
+				new InstallTrustedCertificatesTask(nodeName,
+						TrustedCertCategory.CORBA_PEERS.toString()));
+		// At this moment MO Actions are not mediated so we can not do any more
+		// assert
+
+		// TODO later: Make sure correct message is sent
+
+		System.out.println("OK   InstallTrustedCertificatesTask: " + nodeName);
+	}
+
+	@Context(context = { Context.API })
+	@DataDriven(name = "NodeList")
+	@Test(groups = { "Acceptance" })
+	public void testInitCertEnrollmentTask(
+			@Input("nodeName") final String nodeName,
+			@Input("ipAddress") final String ipAddress) {
+
+        if (!launcherOperator.checkIfLoggedIn(httpTool)) {
+            Assert.fail("ERROR - Not logged in");
+        }
+
+		System.out.println("TEST InitCertEnrollmentTask: " + nodeName);
+		// processTask will throw exception if error occurs on invocation
+		getWFTOperator().processTask(new InitCertEnrollmentTask(nodeName, 42));
+		// At this moment MO Actions are not mediated so we can not do any more
+		// assert
+
+		// TODO later: Make sure correct message is sent
+
+		System.out.println("OK   InitCertEnrollmentTask: " + nodeName);
+	}
+
+	@Context(context = { Context.API })
+	@Test(groups = { "Acceptance" })
+	public void testInitCertEnrollmentNodeDoesNotExists() {
+
+        if (!launcherOperator.checkIfLoggedIn(httpTool)) {
+            Assert.fail("ERROR - Not logged in");
+        }
+
+		try {
+			getWFTOperator().processTask(
+					new InitCertEnrollmentTask("fake_node", 42));
+			fail("Task should FAIL if node does not exists");
+		} catch (final WorkflowTaskException e) {
+			// OK
+		}
+	}
+
+	@Context(context = { Context.API })
+	@Test(groups = { "Acceptance" })
+	public void testInstallTrustedCertificatesTaskNodeDoesNotExists() {
+
+        if (!launcherOperator.checkIfLoggedIn(httpTool)) {
+            Assert.fail("ERROR - Not logged in");
+        }
+
+		try {
+			getWFTOperator().processTask(
+					new InstallTrustedCertificatesTask("fake_node",
+							TrustedCertCategory.CORBA_PEERS.toString()));
+			fail("Task should FAIL if node does not exists");
+		} catch (final WorkflowTaskException e) {
+			// OK
+		}
+	}
+
+/*
+
+	 * tearDown the data: Node needs to be removed from the system
+
+*/
+
+	@Context(context = { Context.REST })
+	@Test(groups = { "Acceptance" })
+	public void tearDownDeleteNodes() {
+
+        if (!launcherOperator.checkIfLoggedIn(httpTool)) {
+            Assert.fail("ERROR - Not logged in");
+        }
+
+		System.out.println("Deleting nodes: "
+				+ Arrays.toString(syncedNodes.toArray()));
+		for (final String nodeName : syncedNodes) {
+			final String deleteNode = String.format(
+					"cmedit delete MeContext=%s -ALL", nodeName);
+			final Command command = new Command(null, deleteNode);
+			getNscsOperator().execute(command, httpTool);
+			System.out.println("Node deleted: " + nodeName);
+		}
+	}
+
+	private WorkflowTaskOperator getWFTOperator() {
+		return wfProvider.provide(WorkflowTaskOperator.class);
+	}
+
+	private SyncNodeOperator getSyncOperator() {
+        final SyncNodeOperator op = syncProvider.provide(SyncNodeOperator.class);
+        op.setHttpTool(httpTool);
+		return op;
+	}
+
+	private NscsServiceOperator getNscsOperator() {
+		return nscsServiceProvider.provide(NscsServiceOperator.class);
+	}
+}
